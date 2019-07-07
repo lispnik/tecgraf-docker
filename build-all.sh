@@ -1,5 +1,4 @@
 #!/bin/sh
-echo here
 svn checkout https://svn.code.sf.net/p/imtoolkit/im/trunk/im im
 svn checkout https://svn.code.sf.net/p/canvasdraw/cd/trunk/cd cd
 svn checkout https://svn.code.sf.net/p/iup/iup/trunk/iup iup
@@ -21,4 +20,3 @@ cd iup \
     && ../checkinstall-helper.sh "iup-dev" "graphics" "cd-dev" \
     && ../checkinstall-helper.sh "iup-doc" "graphics" "" \
     && cd ../
-ls -l /packages
