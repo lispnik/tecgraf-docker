@@ -7,6 +7,11 @@ Creates *.deb packages in packages/ sub-directory.
 
   cd packages/
   dpkg -i tecgraf-im_*.deb tecgraf-cd_*.deb tecgraf-iup_*.deb
+
+You might need to do this fix dependencies afterwards (dpkg doesn't
+install dependencies):
+
+  apt --fix-broken install
   
 TODO
   bintray ubuntu repo? launchpad ppa?
