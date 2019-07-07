@@ -14,3 +14,5 @@ TODO
   lua packages (which lua though?)
   investigate ubuntu 19.04 (seems to be missing gtk 3 webkit)
   use more system libs?
+  parameterize more of the things (see build.sh environment vars for
+  lua)
