@@ -7,4 +7,3 @@ RUN apt-get install -y subversion libreadline-dev g++ libgtk-3-dev libgl1-mesa-d
 	zlib1g-dev checkinstall \
 	atool
 COPY build.sh build-all.sh install.sh checkinstall-helper.sh ./
-ENTRYPOINT ["./build-all.sh"]

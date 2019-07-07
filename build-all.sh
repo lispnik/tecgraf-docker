@@ -5,6 +5,7 @@ svn checkout https://svn.code.sf.net/p/iup/iup/trunk/iup iup
 sh build.sh im
 sh build.sh cd
 sh build.sh iup
+mkdir /packages
 cd im \
     && ../checkinstall-helper.sh "im" "graphics" "zlib1g" \
     && ../checkinstall-helper.sh "im-dev" "graphics" "zlib1g-dev" \
@@ -16,7 +17,8 @@ cd cd \
     && ../checkinstall-helper.sh "cd-doc" "graphics" "" \
     && cd ../
 cd iup \
-    && ../checkinstall-helper.sh "iup" "graphics" "cd" \
-    && ../checkinstall-helper.sh "iup-dev" "graphics" "cd-dev" \
-    && ../checkinstall-helper.sh "iup-doc" "graphics" "" \
+    && ../checkinstall-helper.sh "iup" "libs" "cd" \
+    && ../checkinstall-helper.sh "iup-dev" "libs" "cd-dev" \
+    && ../checkinstall-helper.sh "iup-doc" "libs" "" \
     && cd ../
+ls -l /packages

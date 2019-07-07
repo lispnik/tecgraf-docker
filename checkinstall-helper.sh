@@ -2,7 +2,7 @@
 
 checkinstall \
     -y \
-    --pakdir /packages/ \
+    --pakdir /packages \
     --maintainer '"Matthew Kennedy <burnsidemk@gmail.com>"' \
     --pkgname "$1" \
     --pkglicense MIT \

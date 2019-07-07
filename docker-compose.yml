@@ -1,0 +1,5 @@
+tecgraf:
+  build: .
+  command: ./build-all.sh
+  volumes:
+    - ./packages:/packages
