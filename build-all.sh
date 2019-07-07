@@ -17,7 +17,7 @@ cd cd \
     && ../checkinstall-helper.sh "cd-doc" "graphics" "" \
     && cd ../
 cd iup \
-    && ../checkinstall-helper.sh "iup" "libs" "tecgraf-cd,libgtk-3-0,libwebkitgtk-3.0" \
+    && ../checkinstall-helper.sh "iup" "libs" "tecgraf-cd,libgtk-3-0,libwebkitgtk-3.0-0" \
     && ../checkinstall-helper.sh "iup-dev" "libs" "tecgraf-cd-dev" \
     && ../checkinstall-helper.sh "iup-doc" "libs" "" \
     && cd ../
