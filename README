@@ -1,0 +1,16 @@
+README
+
+  docker-compose build
+  docker-compose run tecgraf
+
+Creates *.deb packages in packages/ sub-directory.
+
+  cd packages/
+  dpkg -i tecgraf-im_*.deb tecgraf-cd_*.deb tecgraf-iup_*.deb
+  
+TODO
+  bintray ubuntu repo? launchpad ppa?
+  other ubuntu versions? (e.g. non-LTS 19.04)
+  lua packages (which lua though?)
+  investigate ubuntu 19.04 (seems to be missing gtk 3 webkit)
+  use more system libs?

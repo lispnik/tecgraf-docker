@@ -4,7 +4,7 @@ checkinstall \
     -y \
     --pakdir /packages \
     --maintainer '"Matthew Kennedy <burnsidemk@gmail.com>"' \
-    --pkgname "$1" \
+    --pkgname "tecgraf-$1" \
     --pkglicense MIT \
     --pkggroup "$2" \
     --requires "$3" \
