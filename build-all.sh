@@ -1,11 +1,12 @@
-#!/bin/sh
+#!/bin/bash
+set -e
 svn checkout https://svn.code.sf.net/p/imtoolkit/im/trunk/im im
 svn checkout https://svn.code.sf.net/p/canvasdraw/cd/trunk/cd cd
 svn checkout https://svn.code.sf.net/p/iup/iup/trunk/iup iup
-sh build.sh im
-sh build.sh cd
-sh build.sh iup
-mkdir /packages
+./build.sh im
+./build.sh cd
+./build.sh iup
+mkdir /packages || true
 cd im \
     && ../checkinstall-helper.sh "im" "graphics" "zlib1g" \
     && ../checkinstall-helper.sh "im-dev" "graphics" "zlib1g-dev" \
@@ -21,4 +22,4 @@ cd iup \
     && ../checkinstall-helper.sh "iup-dev" "libs" "tecgraf-cd-dev" \
     && ../checkinstall-helper.sh "iup-doc" "libs" "" \
     && cd ../
-ls -l /packages
+
