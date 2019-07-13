@@ -1,5 +1,6 @@
 #!/bin/sh
-
+description=$4
+echo "$4" >description-pak
 checkinstall \
     -y \
     --pakdir /packages \
@@ -13,3 +14,4 @@ checkinstall \
     --stripso=no \
     -- \
     sh ../install.sh "$1" 
+rm description-pak
