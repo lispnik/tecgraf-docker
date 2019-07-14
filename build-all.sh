@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
-svn checkout https://svn.code.sf.net/p/imtoolkit/im/trunk/im im
-svn checkout https://svn.code.sf.net/p/canvasdraw/cd/trunk/cd cd
-svn checkout https://svn.code.sf.net/p/iup/iup/trunk/iup iup
+svn checkout https://svn.code.sf.net/p/imtoolkit/im/trunk/im im &
+svn checkout https://svn.code.sf.net/p/canvasdraw/cd/trunk/cd cd &
+svn checkout https://svn.code.sf.net/p/iup/iup/trunk/iup iup &
+wait
 ./build.sh im
 ./build.sh cd
 ./build.sh iup
@@ -46,13 +47,18 @@ cd im \
 	   "im-dev" "graphics" "zlib1g-dev" "${im_description}This package contains the development libraries and header files." \
     && ../checkinstall-helper.sh \
 	   "im-doc" "graphics" "" "${im_description}This package contains the documentation." \
+    && ../checkinstall-helper.sh \
+	   "im-lua" "graphics" "" "${im_description}This package contains the LUA libraries." \
     && cd ../
 cd cd \
     && ../checkinstall-helper.sh \
 	   "cd" "graphics" "tecgraf-im" "${cd_description}This package contains the shared libraries." \
     && ../checkinstall-helper.sh \
 	   "cd-dev" "graphics" "tecgraf-im-dev" "${cd_description}This package contains the development libraries and header files." \
-    && ../checkinstall-helper.sh "cd-doc" "graphics" "" "${cd_description}This package contains the documentation." \
+    && ../checkinstall-helper.sh \
+	   "cd-doc" "graphics" "" "${cd_description}This package contains the documentation." \
+    && ../checkinstall-helper.sh \
+	   "cd-lua" "graphics" "" "${cd_description}This package contains the LUA libraries." \
     && cd ../
 cd iup \
     && ../checkinstall-helper.sh \
@@ -61,4 +67,6 @@ cd iup \
 	   "iup-dev" "libs" "tecgraf-cd-dev" "${iup_description}This package contains the development libraries and header files." \
     && ../checkinstall-helper.sh \
 	   "iup-doc" "libs" "" "${iup_description}This package contains the documentation." \
+    && ../checkinstall-helper.sh \
+	   "iup-lua" "libs" "" "${iup_description}This package contains the LUA libraries." \
     && cd ../
