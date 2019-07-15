@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 description=$4
 echo "$4" >description-pak
 checkinstall \
@@ -13,5 +13,5 @@ checkinstall \
     --pkgversion "$(svn info -r HEAD --show-item revision)" \
     --stripso=no \
     -- \
-    sh ../install.sh "$1" 
+    ../install.sh "$1" 
 rm description-pak
