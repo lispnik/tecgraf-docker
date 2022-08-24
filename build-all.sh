@@ -3,7 +3,15 @@ set -e
 svn checkout http://svn.code.sf.net/p/imtoolkit/im/trunk/im im &
 svn checkout http://svn.code.sf.net/p/canvasdraw/cd/trunk/cd cd &
 svn checkout http://svn.code.sf.net/p/iup/iup/trunk/iup iup &
+svn checkout http://svn.code.sf.net/p/canvasdraw/cd/trunk/ftgl ftgl &
 wait
+
+# don't try to build with pdflib
+sed '/do_all/s/cdpdf//;/do_all/s/cdluapdf5//' -i cd/src/Makefile
+cat cd/src/Makefile
+# build forked ftgl
+make -C ftgl
+
 ./build.sh im
 ./build.sh cd
 ./build.sh iup
@@ -62,7 +70,7 @@ cd cd \
     && cd ../
 cd iup \
     && ../checkinstall-helper.sh \
-	   "iup" "libs" "tecgraf-cd,libgtk-3-0,libwebkitgtk-3.0-0" "${iup_description}This package contains the shared libraries." \
+	   "iup" "libs" "tecgraf-cd,libgtk-3-0,libwebkit2gtk-4.0-37" "${iup_description}This package contains the shared libraries." \
     && ../checkinstall-helper.sh \
 	   "iup-dev" "libs" "tecgraf-cd-dev" "${iup_description}This package contains the development libraries and header files." \
     && ../checkinstall-helper.sh \
