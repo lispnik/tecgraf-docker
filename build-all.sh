@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-svn checkout https://svn.code.sf.net/p/imtoolkit/im/trunk/im im &
-svn checkout https://svn.code.sf.net/p/canvasdraw/cd/trunk/cd cd &
-svn checkout https://svn.code.sf.net/p/iup/iup/trunk/iup iup &
+svn checkout http://svn.code.sf.net/p/imtoolkit/im/trunk/im im &
+svn checkout http://svn.code.sf.net/p/canvasdraw/cd/trunk/cd cd &
+svn checkout http://svn.code.sf.net/p/iup/iup/trunk/iup iup &
 wait
 ./build.sh im
 ./build.sh cd
